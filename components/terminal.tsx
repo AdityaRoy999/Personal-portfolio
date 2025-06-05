@@ -15,7 +15,7 @@ interface TerminalProps {
 export const Terminal = memo(function Terminal({ onClose }: TerminalProps) {
   const [input, setInput] = useState("")
   const [history, setHistory] = useState<string[]>([
-    "Welcome to Alex's Portfolio Terminal!",
+    "Welcome to Aditya's Portfolio Terminal!",
     'Type "help" to see available commands.',
     "",
   ])
@@ -25,7 +25,7 @@ export const Terminal = memo(function Terminal({ onClose }: TerminalProps) {
   const commands = {
     help: () => [
       "Available commands:",
-      "  about     - Learn about Alex",
+      "  about     - Learn about Aditya",
       "  skills    - View technical skills",
       "  projects  - List featured projects",
       "  contact   - Get contact information",
@@ -34,10 +34,10 @@ export const Terminal = memo(function Terminal({ onClose }: TerminalProps) {
       "",
     ],
     about: () => [
-      "Alex Johnson - Backend Developer & Cybersecurity Enthusiast",
+      "Aditya Roy - Backend Developer & Cybersecurity Enthusiast",
       "",
       "Based in Mumbai, Maharashtra, India",
-      "Passionate developer with 3+ years of experience",
+      "Passionate developer with 1+ years of experience",
       "Specializing in backend technologies and cybersecurity",
       "Currently seeking new opportunities",
       "",
@@ -64,15 +64,15 @@ export const Terminal = memo(function Terminal({ onClose }: TerminalProps) {
     contact: () => [
       "Contact Information:",
       "",
-      "Email: alex@example.com",
-      "Phone: +1 (555) 123-4567",
+      "Email: adiroyboy@gmail.com",
+      "Phone: +91 99099 99099",
       "Location: Mumbai, Maharashtra, India",
-      "GitHub: github.com/alex",
-      "LinkedIn: linkedin.com/in/alex",
+      "GitHub: github.com/AdityaRoy999",
+      "LinkedIn: linkedin.com/in/aditya-roy-0492ab26b",
       "",
     ],
     clear: () => {
-      setHistory(["Welcome to Alex's Portfolio Terminal!", 'Type "help" to see available commands.', ""])
+      setHistory(["Welcome to Aditya's Portfolio Terminal!", 'Type "help" to see available commands.', ""])
       return []
     },
     exit: () => {
@@ -140,7 +140,7 @@ export const Terminal = memo(function Terminal({ onClose }: TerminalProps) {
           <CardHeader className="pb-2">
             <div className="flex items-center justify-between">
               <CardTitle className="text-green-400 flex items-center gap-2">
-                <span className="text-sm">alex@portfolio:~$</span>
+                <span className="text-sm">Aditya@portfolio:~$</span>
               </CardTitle>
               <div className="flex items-center gap-2">
                 <Button
