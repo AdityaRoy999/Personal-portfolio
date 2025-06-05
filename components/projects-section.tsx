@@ -51,8 +51,8 @@ export function ProjectsSection() {
       description: "Modern, responsive portfolio website with awesome animations, dark mode, and interactive elements.",
       image: "/placeholder.svg?height=300&width=500",
       tech: ["Next.js", "Three.js", "Typescript", "Tailwind CSS","javascript","Formspree"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/example",
+      liveUrl: "https://adityaroy-4gbe.onrender.com/",
+      githubUrl: "https://github.com/AdityaRoy999/Personal-portfolio",
       featured: false,
     },
   ]

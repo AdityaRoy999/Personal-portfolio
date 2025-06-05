@@ -15,7 +15,7 @@ export function GraphBackground() {
       size: number
     }>
   >([])
-  const rafRef = useRef<number>()
+  const rafRef = useRef<number | NodeJS.Timeout>()
 
   useEffect(() => {
     const canvas = canvasRef.current

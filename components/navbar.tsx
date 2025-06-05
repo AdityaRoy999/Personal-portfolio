@@ -25,8 +25,8 @@ export const Navbar = memo(function Navbar({ funMode, setFunMode }: NavbarProps)
 
   // Add/remove blur effect when mobile menu is open
   useEffect(() => {
-    const mainContent = document.querySelector("main")
-    const heroSection = document.querySelector("#home")
+    const mainContent = document.querySelector("main") as HTMLElement | null
+    const heroSection = document.querySelector("#home") as HTMLElement | null
 
     if (isMobileMenuOpen) {
       if (mainContent) {
