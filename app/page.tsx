@@ -1,3 +1,4 @@
+// app/page.tsx
 "use client"
 
 import { useState, useCallback, memo } from "react"
@@ -14,7 +15,9 @@ import { CustomCursor } from "@/components/custom-cursor"
 import { Terminal } from "@/components/terminal"
 import { Preloader } from "@/components/preloader"
 import { Button } from "@/components/ui/button"
-import { SmoothScrollWrapper } from "@/components/smooth-scroll-wrapper"
+
+// Import dynamic from next/dynamic
+import dynamic from 'next/dynamic';
 
 // Memoize components that don't need frequent re-renders
 const MemoizedHeroSection = memo(HeroSection)
@@ -22,6 +25,22 @@ const MemoizedTechStackSection = memo(TechStackSection)
 const MemoizedProjectsSection = memo(ProjectsSection)
 const MemoizedAboutSection = memo(AboutSection)
 const MemoizedContactSection = memo(ContactSection)
+
+// Dynamically import SmoothScrollWrapper with ssr: false
+// This ensures that SmoothScrollWrapper and all its children
+// (the main content of your portfolio) are only rendered on the client side.
+const DynamicSmoothScrollWrapper = dynamic(
+  () => import("@/components/smooth-scroll-wrapper").then(mod => mod.SmoothScrollWrapper),
+  { ssr: false }
+);
+
+// Dynamically import CustomCursor with ssr: false
+// This is another common culprit for `window is not defined`
+const DynamicCustomCursor = dynamic(
+  () => import("@/components/custom-cursor").then(mod => mod.CustomCursor),
+  { ssr: false }
+);
+
 
 export default function Portfolio() {
   const [funMode, setFunMode] = useState(false)
@@ -43,7 +62,8 @@ export default function Portfolio() {
 
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-      <SmoothScrollWrapper>
+      {/* Use the dynamically imported SmoothScrollWrapper */}
+      <DynamicSmoothScrollWrapper>
         <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden">
           {/* Preloader */}
           <AnimatePresence>{showPreloader && <Preloader onComplete={handlePreloaderComplete} />}</AnimatePresence>
@@ -52,8 +72,8 @@ export default function Portfolio() {
           <AnimatePresence>
             {!showPreloader && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-                {/* Custom Cursor - always visible */}
-                <CustomCursor />
+                {/* Custom Cursor - now dynamically loaded */}
+                <DynamicCustomCursor />
 
                 {/* Navbar with Fun Mode toggle */}
                 <Navbar funMode={funMode} setFunMode={toggleFunMode} />
@@ -100,7 +120,7 @@ export default function Portfolio() {
             )}
           </AnimatePresence>
         </div>
-      </SmoothScrollWrapper>
+      </DynamicSmoothScrollWrapper>
     </ThemeProvider>
   )
 }
