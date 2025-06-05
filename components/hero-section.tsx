@@ -261,7 +261,7 @@ export function HeroSection() {
               <div className="absolute inset-0 flex items-center justify-center p-4 lg:p-8">
                 <div className="relative w-full h-full">
                   <img
-                    src="/a1.jpg?height=400&width=400"
+                    src="/aditya.jpg?height=400&width=400"
                     alt="Aditya Roy - Backend Developer"
                     className="w-full h-full object-cover rounded-xl shadow-2xl"
                   />

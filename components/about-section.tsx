@@ -7,7 +7,7 @@ import { Download, Award, Users, Coffee } from "lucide-react"
 
 export function AboutSection() {
   const stats = [
-    { icon: Award, label: "Years Experience", value: "1+" },
+    { icon: Award, label: "Years Experience", value: "1.5+" },
     { icon: Users, label: "Projects Completed", value: "5+" },
     { icon: Coffee, label: "Cups of Coffee", value: "∞" },
   ]
