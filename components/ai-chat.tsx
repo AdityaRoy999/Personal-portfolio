@@ -460,7 +460,7 @@ export const AIChat = memo(function AIChat() {
     const url = URL.createObjectURL(dataBlob)
     const link = document.createElement("a")
     link.href = url
-    link.download = `alex-portfolio-chat-${new Date().toISOString().split("T")[0]}.json`
+    link.download = `Aditya-portfolio-chat-${new Date().toISOString().split("T")[0]}.json`
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -473,7 +473,7 @@ export const AIChat = memo(function AIChat() {
   }
 
   const exportChatAsText = () => {
-    let textContent = `Alex Johnson Portfolio - AI Chat Conversation\n`
+    let textContent = `Aditya Johnson Portfolio - AI Chat Conversation\n`
     textContent += `Exported on: ${new Date().toLocaleString()}\n`
     textContent += `Total Messages: ${messages.length}\n`
     textContent += `${"=".repeat(50)}\n\n`
@@ -494,7 +494,7 @@ export const AIChat = memo(function AIChat() {
     const url = URL.createObjectURL(dataBlob)
     const link = document.createElement("a")
     link.href = url
-    link.download = `alex-portfolio-chat-${new Date().toISOString().split("T")[0]}.txt`
+    link.download = `Aditya-portfolio-chat-${new Date().toISOString().split("T")[0]}.txt`
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
