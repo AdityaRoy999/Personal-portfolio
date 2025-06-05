@@ -473,7 +473,7 @@ export const AIChat = memo(function AIChat() {
   }
 
   const exportChatAsText = () => {
-    let textContent = `Aditya Johnson Portfolio - AI Chat Conversation\n`
+    let textContent = `Aditya  Portfolio - AI Chat Conversation\n`
     textContent += `Exported on: ${new Date().toLocaleString()}\n`
     textContent += `Total Messages: ${messages.length}\n`
     textContent += `${"=".repeat(50)}\n\n`
