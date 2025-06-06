@@ -40,9 +40,9 @@ export function ProjectsSection() {
     },
     {
       title: "Advanced Calculator",
-      description: "Beautiful weather application with location-based forecasts, interactive maps, and weather alerts.",
+      description: "A terminal based tool which does basic arithmetic operations to advanced mathematical calculations, this calculator has got you covered!",
       image: "/pr3.png?height=300&width=500",
-      tech: ["React Native", "TypeScript", "Weather API", "Maps API"],
+      tech: ["python"],
       githubUrl: "https://github.com/AdityaRoy999/Advance-Calculator-in-python",
       featured: false,
     },
