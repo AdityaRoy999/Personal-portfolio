@@ -92,3 +92,19 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Add this to your globals.css if not already there */
+.smooth-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Enhanced smooth scrolling - optimized for speed */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Account for fixed header with extra space */
+}
+
+/* Smooth scrolling for all elements */
+* {
+  scroll-behavior: smooth;
+}

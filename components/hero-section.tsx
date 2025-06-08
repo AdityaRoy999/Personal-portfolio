@@ -163,18 +163,25 @@ export function HeroSection() {
           <motion.div
             className="text-center lg:text-left w-full max-w-2xl lg:max-w-none"
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.3 }} // ✅ Re-animates on scroll
             transition={{ duration: 0.8 }}
-            key={`content-${dimensions.width}-${dimensions.height}`} // Force re-render on dimension change
+            key={`content-${dimensions.width}-${dimensions.height}`}
           >
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: false, amount: 0.3 }} // ✅ Re-animates on scroll
+              transition={{ delay: 0.2 }}
+            >
               {renderHeading()}
             </motion.div>
 
             <motion.div
               className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-4"
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }} // ✅ Re-animates on scroll
               transition={{ delay: 0.4 }}
             >
               Backend Developer and Cybersecurity Enthusiast
@@ -183,7 +190,8 @@ export function HeroSection() {
             <motion.p
               className="text-base sm:text-lg text-muted-foreground mb-2"
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }} // ✅ Re-animates on scroll
               transition={{ delay: 0.5 }}
             >
               I am from Mumbai, Maharashtra, India
@@ -192,18 +200,18 @@ export function HeroSection() {
             <motion.p
               className="text-base sm:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }} // ✅ Re-animates on scroll
               transition={{ delay: 0.6 }}
             >
-              I craft beautiful, functional web experiences with modern technologies. Passionate about creating
-              intuitive user interfaces and scalable applications.
             </motion.p>
 
             {/* CTA Buttons */}
             <motion.div
               className="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start"
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }} // ✅ Re-animates on scroll
               transition={{ delay: 0.8 }}
             >
               <Button onClick={scrollToProjects} size="lg" className="group">
@@ -219,7 +227,8 @@ export function HeroSection() {
             <motion.div
               className="flex justify-center lg:justify-start space-x-4"
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }} // ✅ Re-animates on scroll
               transition={{ delay: 1 }}
             >
               <Button variant="ghost" size="sm" asChild>
@@ -253,9 +262,10 @@ export function HeroSection() {
           <motion.div
             className="flex justify-center lg:justify-end w-full"
             initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.3 }} // ✅ Re-animates on scroll
             transition={{ delay: 0.4, duration: 0.8 }}
-            key={`image-${dimensions.width}-${dimensions.height}`} // Force re-render on dimension change
+            key={`image-${dimensions.width}-${dimensions.height}`}
           >
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-full lg:h-96 max-w-md lg:max-w-none rounded-2xl bg-gradient-to-br from-primary/20 to-purple-600/20 backdrop-blur-sm border border-primary/20 overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center p-4 lg:p-8">

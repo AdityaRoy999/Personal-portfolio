@@ -19,7 +19,7 @@ export function AboutSection() {
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.3 }} // Changed from once: true
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -64,7 +64,7 @@ export function AboutSection() {
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false, amount: 0.2 }} // For each stat card
                   transition={{ delay: index * 0.1 }}
                 >
                   <Card className="hover:shadow-lg transition-shadow duration-300">

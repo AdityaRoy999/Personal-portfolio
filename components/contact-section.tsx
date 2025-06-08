@@ -125,7 +125,7 @@ export function ContactSection() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: false, amount: 0.3 }}>
             <Card>
               <CardHeader>
                 <CardTitle>Send me a message</CardTitle>
@@ -189,7 +189,7 @@ export function ContactSection() {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.3 }}
             className="space-y-8"
           >
             {/* Contact Information */}

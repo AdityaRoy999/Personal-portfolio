@@ -57,12 +57,14 @@ export const Navbar = memo(function Navbar({ funMode, setFunMode }: NavbarProps)
     }
   }, [isMobileMenuOpen])
 
-  const navItems = [
+  const navItems = 
+  [
     { name: "Home", href: "#home" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
+    { name: "Skills", href: "#tech-stack" },
+    { name: "Projects", href: "#projects"},
+    { name: "Experience", href: "#experience"},
     { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact", href: "#contact" }
   ]
 
   const scrollToSection = (href: string) => {

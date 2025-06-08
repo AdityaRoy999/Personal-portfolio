@@ -81,7 +81,7 @@ export function ProjectsSection() {
                 key={project.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.3 }}
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="h-full hover:shadow-xl transition-all duration-300 group overflow-hidden">

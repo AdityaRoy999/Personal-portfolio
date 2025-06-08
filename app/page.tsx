@@ -1,7 +1,7 @@
 // app/page.tsx
 "use client"
 
-import { useState, useCallback, memo } from "react"
+import { useState, useCallback, memo, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Navbar } from "@/components/navbar"
@@ -15,6 +15,7 @@ import { CustomCursor } from "@/components/custom-cursor"
 import { Terminal } from "@/components/terminal"
 import { Preloader } from "@/components/preloader"
 import { Button } from "@/components/ui/button"
+import { ExperienceSection } from "@/components/experience-section"
 
 // Import dynamic from next/dynamic
 import dynamic from 'next/dynamic';
@@ -25,6 +26,7 @@ const MemoizedTechStackSection = memo(TechStackSection)
 const MemoizedProjectsSection = memo(ProjectsSection)
 const MemoizedAboutSection = memo(AboutSection)
 const MemoizedContactSection = memo(ContactSection)
+const MemoizedExperienceSection = memo(ExperienceSection)
 
 // Dynamically import SmoothScrollWrapper with ssr: false
 // This ensures that SmoothScrollWrapper and all its children
@@ -59,6 +61,34 @@ export default function Portfolio() {
   const handlePreloaderComplete = useCallback(() => {
     setShowPreloader(false)
   }, [])
+
+  // Smooth scrolling for anchor links
+  useEffect(() => {
+    // Apply smooth scrolling to all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e: Event) {
+        e.preventDefault();
+        const target = e.currentTarget as HTMLAnchorElement;
+        const href = target.getAttribute('href');
+        if (href) {
+          const targetElement = document.querySelector(href);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+      });
+    });
+
+    return () => {
+      // Cleanup event listeners
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.removeEventListener('click', function() {});
+      });
+    };
+  }, []);
 
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
@@ -105,6 +135,7 @@ export default function Portfolio() {
                   <MemoizedHeroSection />
                   <MemoizedTechStackSection />
                   <MemoizedProjectsSection />
+                  <MemoizedExperienceSection />
                   <MemoizedAboutSection />
                   <MemoizedContactSection />
                 </main>
