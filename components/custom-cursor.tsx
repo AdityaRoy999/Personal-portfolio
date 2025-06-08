@@ -46,8 +46,8 @@ export function CustomCursor() {
   const currentTheme = mounted ? resolvedTheme || theme : "dark"
 
   useEffect(() => {
-    // Run cursor logic on all devices for now (we can add desktop check later)
-    // if (!isDesktop) return
+    // ✅ UNCOMMENTED: Only run cursor logic on desktop devices
+    if (!isDesktop) return
 
     // Handle cursor visibility
     const onMouseEnter = () => {
@@ -179,10 +179,10 @@ export function CustomCursor() {
         cancelAnimationFrame(requestRef.current)
       }
     }
-  }, [isHovering, isClicking, currentTheme])
+  }, [isHovering, isClicking, currentTheme, isDesktop]) // ✅ Added isDesktop to dependencies
 
-  // Only don't render if not mounted - always render for now
-  if (!mounted) return null
+  // ✅ CHANGED: Don't render if not mounted OR not desktop
+  if (!mounted || !isDesktop) return null
 
   // Determine colors based on theme and state
   const getOuterColor = () => {
